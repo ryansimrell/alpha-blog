@@ -1,0 +1,26 @@
+<%= render 'shared/errors', obj: @user  %>
+
+<%= form_with(model: @user, local: true) do |f| %>
+    <div class="container mt-4 mb-4">
+        <div class="card text-center shadow mb-2 bg-white rounded">
+            <div class="card-body">
+                <div class="form-group">
+                    <%= f.label :username, class: "float-left" %>
+                    <%= f.text_field :username, class: "form-control shadow-sm", placeholder: "Enter Username" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :email, class: "float-left" %>
+                    <%= f.email_field :email, class: "form-control shadow-sm", id: "newFormControlTextarea1", placeholder: "Enter E-Mail" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :password, class: "float-left" %>
+                    <%= f.password_field :password, class: "form-control shadow-sm", id: "newFormControlTextarea1", placeholder: "Choose a Password" %>
+                </div>
+                <div class="form-group">
+                    <%= f.submit "Sign Up", class: "btn btn-outline-success float-left"%>
+                    <%= link_to 'Cancel', root_path, class: "btn btn-outline-danger float-right" %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
